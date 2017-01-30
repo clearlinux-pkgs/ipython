@@ -1,3 +1,14 @@
 # This file contains additional build requirements that did not get
 # picked up automatically. One name per line, no whitespace.
 Pygments
+ipython
+six
+pexpect
+ipython_genutils
+ptyprocess
+wcwidth
+ipykernel
+jupyter_client
+pyzmq
+jupyter_core
+tornado
