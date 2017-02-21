@@ -1,5 +1,5 @@
 PKG_NAME := ipython
-URL := https://pypi.python.org/packages/e7/75/7c981d2d7f25754ef64f955b595c2d80e2fec1aa47e52bd55ab35dbc8ccf/ipython-5.2.1.tar.gz
+URL := https://pypi.python.org/packages/6e/cf/c2a3ca5942e2d8084574157a8f818efafb7218204cd9e41166c92c452e07/ipython-5.2.2.tar.gz
 
 
 include ../common/Makefile.common
