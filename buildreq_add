@@ -12,3 +12,4 @@ jupyter_client
 pyzmq
 jupyter_core
 tornado
+python-dateutil
