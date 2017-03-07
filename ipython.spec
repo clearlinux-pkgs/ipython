@@ -4,7 +4,7 @@
 #
 Name     : ipython
 Version  : 5.3.0
-Release  : 5
+Release  : 6
 URL      : http://pypi.debian.net/ipython/ipython-5.3.0.tar.gz
 Source0  : http://pypi.debian.net/ipython/ipython-5.3.0.tar.gz
 Summary  : IPython: Productive Interactive Computing
@@ -87,12 +87,12 @@ python components for the ipython package.
 
 %build
 export LANG=C
-export SOURCE_DATE_EPOCH=1487983088
+export SOURCE_DATE_EPOCH=1488922575
 python2 setup.py build -b py2
 python3 setup.py build -b py3
 
 %install
-export SOURCE_DATE_EPOCH=1487983088
+export SOURCE_DATE_EPOCH=1488922575
 rm -rf %{buildroot}
 python2 -tt setup.py build -b py2 install --root=%{buildroot} --force
 python3 -tt setup.py build -b py3 install --root=%{buildroot} --force
