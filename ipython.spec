@@ -4,7 +4,7 @@
 #
 Name     : ipython
 Version  : 6.0.0
-Release  : 7
+Release  : 8
 URL      : http://pypi.debian.net/ipython/ipython-6.0.0.tar.gz
 Source0  : http://pypi.debian.net/ipython/ipython-6.0.0.tar.gz
 Summary  : IPython: Productive Interactive Computing
