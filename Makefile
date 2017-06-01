@@ -1,5 +1,5 @@
 PKG_NAME := ipython
-URL := http://pypi.debian.net/ipython/ipython-6.0.0.tar.gz
+URL := https://pypi.debian.net/ipython/ipython-6.1.0.tar.gz
 
 
 include ../common/Makefile.common
