@@ -4,16 +4,17 @@
 #
 Name     : ipython
 Version  : 6.2.1
-Release  : 11
+Release  : 12
 URL      : https://pypi.debian.net/ipython/ipython-6.2.1.tar.gz
 Source0  : https://pypi.debian.net/ipython/ipython-6.2.1.tar.gz
 Summary  : IPython: Productive Interactive Computing
 Group    : Development/Tools
 License  : BSD-3-Clause BSD-3-Clause-Clear
 Requires: ipython-bin
-Requires: ipython-python
+Requires: ipython-python3
 Requires: ipython-data
 Requires: ipython-doc
+Requires: ipython-python
 Requires: Pygments
 Requires: decorator
 Requires: ipykernel
@@ -79,9 +80,19 @@ doc components for the ipython package.
 %package python
 Summary: python components for the ipython package.
 Group: Default
+Requires: ipython-python3
 
 %description python
 python components for the ipython package.
+
+
+%package python3
+Summary: python3 components for the ipython package.
+Group: Default
+Requires: python3-core
+
+%description python3
+python3 components for the ipython package.
 
 
 %prep
@@ -92,7 +103,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1506724252
+export SOURCE_DATE_EPOCH=1507155333
 python3 setup.py build -b py3
 
 %install
@@ -126,5 +137,8 @@ ipython kernel install --prefix %{buildroot}/usr
 %doc /usr/share/man/man1/*
 
 %files python
+%defattr(-,root,root,-)
+
+%files python3
 %defattr(-,root,root,-)
 /usr/lib/python3*/*
