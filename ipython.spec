@@ -42,7 +42,7 @@ BuildRequires : pip
 BuildRequires : prompt_toolkit
 BuildRequires : ptyprocess
 BuildRequires : python-dateutil
-BuildRequires : python-dev
+
 BuildRequires : python3-dev
 BuildRequires : pyzmq
 BuildRequires : setuptools
