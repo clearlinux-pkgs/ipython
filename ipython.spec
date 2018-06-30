@@ -4,7 +4,7 @@
 #
 Name     : ipython
 Version  : 6.4.0
-Release  : 23
+Release  : 24
 URL      : https://files.pythonhosted.org/packages/ee/01/2a85cd07f5a43fa2e86d60001c213647252662d44a0c2e3d69471a058f1b/ipython-6.4.0.tar.gz
 Source0  : https://files.pythonhosted.org/packages/ee/01/2a85cd07f5a43fa2e86d60001c213647252662d44a0c2e3d69471a058f1b/ipython-6.4.0.tar.gz
 Summary  : IPython: Productive Interactive Computing
@@ -12,7 +12,7 @@ Group    : Development/Tools
 License  : BSD-3-Clause BSD-3-Clause-Clear
 Requires: ipython-bin
 Requires: ipython-python3
-Requires: ipython-data
+Requires: ipython-license
 Requires: ipython-man
 Requires: ipython-python
 Requires: Pygments
@@ -42,7 +42,6 @@ BuildRequires : pip
 BuildRequires : prompt_toolkit
 BuildRequires : ptyprocess
 BuildRequires : python-dateutil
-
 BuildRequires : python3-dev
 BuildRequires : pyzmq
 BuildRequires : setuptools
@@ -58,19 +57,19 @@ IPython provides a rich toolkit to help you make the most out of using Python
 %package bin
 Summary: bin components for the ipython package.
 Group: Binaries
-Requires: ipython-data
+Requires: ipython-license
 Requires: ipython-man
 
 %description bin
 bin components for the ipython package.
 
 
-%package data
-Summary: data components for the ipython package.
-Group: Data
+%package license
+Summary: license components for the ipython package.
+Group: Default
 
-%description data
-data components for the ipython package.
+%description license
+license components for the ipython package.
 
 
 %package man
@@ -107,18 +106,18 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1526830934
+export SOURCE_DATE_EPOCH=1530392454
 python3 setup.py build -b py3
 
 %install
 rm -rf %{buildroot}
+mkdir -p %{buildroot}/usr/share/doc/ipython
+cp COPYING.rst %{buildroot}/usr/share/doc/ipython/COPYING.rst
+cp docs/source/about/license_and_copyright.rst %{buildroot}/usr/share/doc/ipython/docs_source_about_license_and_copyright.rst
 python3 -tt setup.py build -b py3 install --root=%{buildroot}
 echo ----[ mark ]----
 cat %{buildroot}/usr/lib/python3*/site-packages/*/requires.txt || :
 echo ----[ mark ]----
-## make_install_append content
-ipython kernel install --prefix %{buildroot}/usr
-## make_install_append end
 
 %files
 %defattr(-,root,root,-)
@@ -130,11 +129,10 @@ ipython kernel install --prefix %{buildroot}/usr
 /usr/bin/ipython
 /usr/bin/ipython3
 
-%files data
+%files license
 %defattr(-,root,root,-)
-/usr/share/jupyter/kernels/python3/kernel.json
-/usr/share/jupyter/kernels/python3/logo-32x32.png
-/usr/share/jupyter/kernels/python3/logo-64x64.png
+/usr/share/doc/ipython/COPYING.rst
+/usr/share/doc/ipython/docs_source_about_license_and_copyright.rst
 
 %files man
 %defattr(-,root,root,-)
