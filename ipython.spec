@@ -4,7 +4,7 @@
 #
 Name     : ipython
 Version  : 6.4.0
-Release  : 26
+Release  : 27
 URL      : https://files.pythonhosted.org/packages/ee/01/2a85cd07f5a43fa2e86d60001c213647252662d44a0c2e3d69471a058f1b/ipython-6.4.0.tar.gz
 Source0  : https://files.pythonhosted.org/packages/ee/01/2a85cd07f5a43fa2e86d60001c213647252662d44a0c2e3d69471a058f1b/ipython-6.4.0.tar.gz
 Summary  : IPython: Productive Interactive Computing
@@ -13,6 +13,7 @@ License  : BSD-3-Clause BSD-3-Clause-Clear
 Requires: ipython-bin
 Requires: ipython-python3
 Requires: ipython-license
+Requires: ipython-data
 Requires: ipython-man
 Requires: ipython-python
 Requires: Pygments
@@ -57,11 +58,20 @@ IPython provides a rich toolkit to help you make the most out of using Python
 %package bin
 Summary: bin components for the ipython package.
 Group: Binaries
+Requires: ipython-data
 Requires: ipython-license
 Requires: ipython-man
 
 %description bin
 bin components for the ipython package.
+
+
+%package data
+Summary: data components for the ipython package.
+Group: Data
+
+%description data
+data components for the ipython package.
 
 
 %package license
@@ -106,7 +116,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1530392765
+export SOURCE_DATE_EPOCH=1530396681
 python3 setup.py build -b py3
 
 %install
@@ -118,6 +128,9 @@ python3 -tt setup.py build -b py3 install --root=%{buildroot}
 echo ----[ mark ]----
 cat %{buildroot}/usr/lib/python3*/site-packages/*/requires.txt || :
 echo ----[ mark ]----
+## make_install_append content
+ipython kernel install --prefix %{buildroot}/usr
+## make_install_append end
 
 %files
 %defattr(-,root,root,-)
@@ -128,6 +141,12 @@ echo ----[ mark ]----
 /usr/bin/iptest3
 /usr/bin/ipython
 /usr/bin/ipython3
+
+%files data
+%defattr(-,root,root,-)
+/usr/share/jupyter/kernels/python3/kernel.json
+/usr/share/jupyter/kernels/python3/logo-32x32.png
+/usr/share/jupyter/kernels/python3/logo-64x64.png
 
 %files license
 %defattr(-,root,root,-)
