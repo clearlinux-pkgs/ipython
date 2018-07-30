@@ -4,7 +4,7 @@
 #
 Name     : ipython
 Version  : 6.4.0
-Release  : 30
+Release  : 31
 URL      : https://files.pythonhosted.org/packages/ee/01/2a85cd07f5a43fa2e86d60001c213647252662d44a0c2e3d69471a058f1b/ipython-6.4.0.tar.gz
 Source0  : https://files.pythonhosted.org/packages/ee/01/2a85cd07f5a43fa2e86d60001c213647252662d44a0c2e3d69471a058f1b/ipython-6.4.0.tar.gz
 Summary  : IPython: Productive Interactive Computing
@@ -29,6 +29,7 @@ Requires: simplegeneric
 Requires: traitlets
 BuildRequires : Pygments
 BuildRequires : backcall
+BuildRequires : buildreq-distutils3
 BuildRequires : decorator
 BuildRequires : ipykernel
 BuildRequires : ipython
@@ -36,14 +37,11 @@ BuildRequires : ipython_genutils
 BuildRequires : jedi
 BuildRequires : jupyter_client
 BuildRequires : jupyter_core
-BuildRequires : pbr
 BuildRequires : pexpect
 BuildRequires : pickleshare
-BuildRequires : pip
 BuildRequires : prompt_toolkit
 BuildRequires : ptyprocess
 BuildRequires : python-dateutil
-BuildRequires : python3-dev
 BuildRequires : pyzmq
 BuildRequires : setuptools
 BuildRequires : simplegeneric
@@ -116,7 +114,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1530396681
+export SOURCE_DATE_EPOCH=1532909309
 python3 setup.py build -b py3
 
 %install
@@ -128,9 +126,9 @@ python3 -tt setup.py build -b py3 install --root=%{buildroot}
 echo ----[ mark ]----
 cat %{buildroot}/usr/lib/python3*/site-packages/*/requires.txt || :
 echo ----[ mark ]----
-## make_install_append content
+## install_append content
 ipython kernel install --prefix %{buildroot}/usr
-## make_install_append end
+## install_append end
 
 %files
 %defattr(-,root,root,-)
