@@ -1,5 +1,5 @@
 PKG_NAME := ipython
-URL = https://files.pythonhosted.org/packages/1a/76/0b51dc7dd3a801477d00e6db065f50cce9fe5bdbea3c911fce62c9f02c23/ipython-6.5.0.tar.gz
+URL = https://files.pythonhosted.org/packages/cd/d3/7a6b2659932929389a224ff2ba9c576d4f5677eef2b2437cde054e12b4f4/ipython-7.0.0.tar.gz
 ARCHIVES = 
 
 include ../common/Makefile.common
