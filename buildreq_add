@@ -14,3 +14,4 @@ jupyter_core
 tornado
 python-dateutil
 backcall
+prompt_toolkit
