@@ -2,6 +2,7 @@
 Cython
 bash_kernel
 ipdb
+ipdbplugin
 ipykernel
 ipython
 ipython-sql
