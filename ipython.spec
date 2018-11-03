@@ -4,7 +4,7 @@
 #
 Name     : ipython
 Version  : 7.1.1
-Release  : 35
+Release  : 36
 URL      : https://files.pythonhosted.org/packages/f3/c3/6c0af5b99d9551fa7b33c674d8f1232033678dcc817098e7a4ac8cd0baf1/ipython-7.1.1.tar.gz
 Source0  : https://files.pythonhosted.org/packages/f3/c3/6c0af5b99d9551fa7b33c674d8f1232033678dcc817098e7a4ac8cd0baf1/ipython-7.1.1.tar.gz
 Summary  : IPython: Productive Interactive Computing
@@ -113,7 +113,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1540735756
+export SOURCE_DATE_EPOCH=1541266713
 python3 setup.py build
 
 %install
