@@ -4,7 +4,7 @@
 #
 Name     : ipython
 Version  : 7.2.0
-Release  : 37
+Release  : 38
 URL      : https://files.pythonhosted.org/packages/42/bb/0ed1fb1d57d697326f9e9b827d9a74b81dee56031ed7c252bc716195ad7a/ipython-7.2.0.tar.gz
 Source0  : https://files.pythonhosted.org/packages/42/bb/0ed1fb1d57d697326f9e9b827d9a74b81dee56031ed7c252bc716195ad7a/ipython-7.2.0.tar.gz
 Summary  : IPython: Productive Interactive Computing
@@ -23,6 +23,7 @@ Requires: decorator
 Requires: ipykernel
 Requires: jedi
 Requires: matplotlib
+Requires: pexpect
 Requires: pickleshare
 Requires: prompt_toolkit
 Requires: setuptools
@@ -113,7 +114,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1543744679
+export SOURCE_DATE_EPOCH=1544221672
 python3 setup.py build
 
 %install
