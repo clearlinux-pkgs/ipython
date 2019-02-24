@@ -4,7 +4,7 @@
 #
 Name     : ipython
 Version  : 7.3.0
-Release  : 42
+Release  : 43
 URL      : https://files.pythonhosted.org/packages/82/0a/146b0f0f1ddf13ab8682aed5c5a42250cddf1082e193ec95b50b03b9f791/ipython-7.3.0.tar.gz
 Source0  : https://files.pythonhosted.org/packages/82/0a/146b0f0f1ddf13ab8682aed5c5a42250cddf1082e193ec95b50b03b9f791/ipython-7.3.0.tar.gz
 Summary  : An enhanced Interactive Python shell.
@@ -17,12 +17,9 @@ Requires: ipython-man = %{version}-%{release}
 Requires: ipython-python = %{version}-%{release}
 Requires: ipython-python3 = %{version}-%{release}
 Requires: Pygments
-Requires: Sphinx
 Requires: backcall
 Requires: decorator
-Requires: ipykernel
 Requires: jedi
-Requires: matplotlib
 Requires: pexpect
 Requires: pickleshare
 Requires: prompt_toolkit
@@ -115,7 +112,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1550538364
+export SOURCE_DATE_EPOCH=1551026361
 export MAKEFLAGS=%{?_smp_mflags}
 python3 setup.py build
 
