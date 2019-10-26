@@ -1,7 +1,6 @@
 # This file contains recursive sources that require this package
 Cython
 bash_kernel
-deprecated-Cython
 fontforge
 ipdb
 ipdbplugin
