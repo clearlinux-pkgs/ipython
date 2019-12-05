@@ -4,13 +4,14 @@
 #
 Name     : ipython
 Version  : 7.10.1
-Release  : 57
+Release  : 58
 URL      : https://files.pythonhosted.org/packages/52/9b/39b5faf23cf88206045a353d2c5f903e85122ffbe11c0985775b5aae6ddf/ipython-7.10.1.tar.gz
 Source0  : https://files.pythonhosted.org/packages/52/9b/39b5faf23cf88206045a353d2c5f903e85122ffbe11c0985775b5aae6ddf/ipython-7.10.1.tar.gz
 Summary  : An enhanced Interactive Python shell.
 Group    : Development/Tools
 License  : BSD-3-Clause BSD-3-Clause-Clear
 Requires: ipython-bin = %{version}-%{release}
+Requires: ipython-data = %{version}-%{release}
 Requires: ipython-license = %{version}-%{release}
 Requires: ipython-man = %{version}-%{release}
 Requires: ipython-python = %{version}-%{release}
@@ -53,10 +54,19 @@ BuildRequires : wcwidth
 %package bin
 Summary: bin components for the ipython package.
 Group: Binaries
+Requires: ipython-data = %{version}-%{release}
 Requires: ipython-license = %{version}-%{release}
 
 %description bin
 bin components for the ipython package.
+
+
+%package data
+Summary: data components for the ipython package.
+Group: Data
+
+%description data
+data components for the ipython package.
 
 
 %package license
@@ -102,7 +112,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1575551951
+export SOURCE_DATE_EPOCH=1575553190
 # -Werror is for werrorists
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
@@ -127,7 +137,7 @@ echo ----[ mark ]----
 cat %{buildroot}/usr/lib/python3*/site-packages/*/requires.txt || :
 echo ----[ mark ]----
 ## install_append content
-# ipython kernel install --prefix %{buildroot}/usr
+ipython kernel install --prefix %{buildroot}/usr
 ## install_append end
 
 %files
@@ -139,6 +149,12 @@ echo ----[ mark ]----
 /usr/bin/iptest3
 /usr/bin/ipython
 /usr/bin/ipython3
+
+%files data
+%defattr(-,root,root,-)
+/usr/share/jupyter/kernels/python3/kernel.json
+/usr/share/jupyter/kernels/python3/logo-32x32.png
+/usr/share/jupyter/kernels/python3/logo-64x64.png
 
 %files license
 %defattr(0644,root,root,0755)
