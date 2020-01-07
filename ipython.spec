@@ -4,7 +4,7 @@
 #
 Name     : ipython
 Version  : 7.11.1
-Release  : 60
+Release  : 61
 URL      : https://files.pythonhosted.org/packages/db/d1/610e5f7caafc0d8d66ee53fc47184834a0de91a0c69a1a64b26f3a3c089c/ipython-7.11.1.tar.gz
 Source0  : https://files.pythonhosted.org/packages/db/d1/610e5f7caafc0d8d66ee53fc47184834a0de91a0c69a1a64b26f3a3c089c/ipython-7.11.1.tar.gz
 Summary  : An enhanced Interactive Python shell.
