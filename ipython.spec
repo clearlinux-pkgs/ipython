@@ -4,7 +4,7 @@
 #
 Name     : ipython
 Version  : 7.12.0
-Release  : 62
+Release  : 63
 URL      : https://files.pythonhosted.org/packages/ce/e1/b9234b258086f80f8507afb80f6774c6daf3bd9b2765190ee8e3cd2c4759/ipython-7.12.0.tar.gz
 Source0  : https://files.pythonhosted.org/packages/ce/e1/b9234b258086f80f8507afb80f6774c6daf3bd9b2765190ee8e3cd2c4759/ipython-7.12.0.tar.gz
 Summary  : An enhanced Interactive Python shell.
@@ -48,8 +48,43 @@ BuildRequires : traitlets
 BuildRequires : wcwidth
 
 %description
-.. image:: https://codecov.io/github/ipython/ipython/coverage.svg?branch=master
-:target: https://codecov.io/github/ipython/ipython?branch=master
+IPython provides a rich toolkit to help you make the most out of using Python
+interactively.  Its main components are:
+
+* A powerful interactive Python shell
+* A `Jupyter <https://jupyter.org/>`_ kernel to work with Python code in Jupyter
+  notebooks and other interactive frontends.
+
+The enhanced interactive Python shells have the following main features:
+
+* Comprehensive object introspection.
+
+* Input history, persistent across sessions.
+
+* Caching of output results during a session with automatically generated
+  references.
+
+* Extensible tab completion, with support by default for completion of python
+  variables and keywords, filenames and function keywords.
+
+* Extensible system of 'magic' commands for controlling the environment and
+  performing many tasks related either to IPython or the operating system.
+
+* A rich configuration system with easy switching between different setups
+  (simpler than changing $PYTHONSTARTUP environment variables every time).
+
+* Session logging and reloading.
+
+* Extensible syntax processing for special purpose situations.
+
+* Access to the system shell with user-extensible alias system.
+
+* Easily embeddable in other Python programs and GUIs.
+
+* Integrated access to the pdb debugger and the Python profiler.
+
+The latest development version is always available from IPython's `GitHub
+site <http://github.com/ipython>`_.
 
 %package bin
 Summary: bin components for the ipython package.
@@ -98,6 +133,7 @@ python components for the ipython package.
 Summary: python3 components for the ipython package.
 Group: Default
 Requires: python3-core
+Provides: pypi(ipython)
 
 %description python3
 python3 components for the ipython package.
@@ -112,7 +148,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1580745826
+export SOURCE_DATE_EPOCH=1583159324
 # -Werror is for werrorists
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
