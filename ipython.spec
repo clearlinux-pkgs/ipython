@@ -4,7 +4,7 @@
 #
 Name     : ipython
 Version  : 7.13.0
-Release  : 64
+Release  : 65
 URL      : https://files.pythonhosted.org/packages/76/d4/13001e8671e8b012ec25acb9a695d3271ceed2dc6aa8f94103a6dd0c4577/ipython-7.13.0.tar.gz
 Source0  : https://files.pythonhosted.org/packages/76/d4/13001e8671e8b012ec25acb9a695d3271ceed2dc6aa8f94103a6dd0c4577/ipython-7.13.0.tar.gz
 Summary  : An enhanced Interactive Python shell.
@@ -35,56 +35,26 @@ BuildRequires : ipython_genutils
 BuildRequires : jedi
 BuildRequires : jupyter_client
 BuildRequires : jupyter_core
+BuildRequires : matplotlib
+BuildRequires : nbformat
+BuildRequires : nose
 BuildRequires : pexpect
 BuildRequires : pickleshare
 BuildRequires : prompt_toolkit
 BuildRequires : ptyprocess
+BuildRequires : pytest
 BuildRequires : python-dateutil
 BuildRequires : pyzmq
 BuildRequires : setuptools
 BuildRequires : six
+BuildRequires : testpath
 BuildRequires : tornado
 BuildRequires : traitlets
 BuildRequires : wcwidth
 
 %description
-IPython provides a rich toolkit to help you make the most out of using Python
-interactively.  Its main components are:
-
-* A powerful interactive Python shell
-* A `Jupyter <https://jupyter.org/>`_ kernel to work with Python code in Jupyter
-  notebooks and other interactive frontends.
-
-The enhanced interactive Python shells have the following main features:
-
-* Comprehensive object introspection.
-
-* Input history, persistent across sessions.
-
-* Caching of output results during a session with automatically generated
-  references.
-
-* Extensible tab completion, with support by default for completion of python
-  variables and keywords, filenames and function keywords.
-
-* Extensible system of 'magic' commands for controlling the environment and
-  performing many tasks related either to IPython or the operating system.
-
-* A rich configuration system with easy switching between different setups
-  (simpler than changing $PYTHONSTARTUP environment variables every time).
-
-* Session logging and reloading.
-
-* Extensible syntax processing for special purpose situations.
-
-* Access to the system shell with user-extensible alias system.
-
-* Easily embeddable in other Python programs and GUIs.
-
-* Integrated access to the pdb debugger and the Python profiler.
-
-The latest development version is always available from IPython's `GitHub
-site <http://github.com/ipython>`_.
+.. image:: https://codecov.io/github/ipython/ipython/coverage.svg?branch=master
+:target: https://codecov.io/github/ipython/ipython?branch=master
 
 %package bin
 Summary: bin components for the ipython package.
@@ -134,6 +104,15 @@ Summary: python3 components for the ipython package.
 Group: Default
 Requires: python3-core
 Provides: pypi(ipython)
+Requires: pypi(backcall)
+Requires: pypi(decorator)
+Requires: pypi(jedi)
+Requires: pypi(pexpect)
+Requires: pypi(pickleshare)
+Requires: pypi(prompt_toolkit)
+Requires: pypi(pygments)
+Requires: pypi(setuptools)
+Requires: pypi(traitlets)
 
 %description python3
 python3 components for the ipython package.
@@ -148,7 +127,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1583160463
+export SOURCE_DATE_EPOCH=1585236744
 # -Werror is for werrorists
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
@@ -161,6 +140,11 @@ export CXXFLAGS="$CXXFLAGS -O3 -ffat-lto-objects -flto=4 "
 export MAKEFLAGS=%{?_smp_mflags}
 python3 setup.py build
 
+%check
+export http_proxy=http://127.0.0.1:9/
+export https_proxy=http://127.0.0.1:9/
+export no_proxy=localhost,127.0.0.1,0.0.0.0
+pytest || :
 %install
 export MAKEFLAGS=%{?_smp_mflags}
 rm -rf %{buildroot}
