@@ -4,7 +4,7 @@
 #
 Name     : ipython
 Version  : 7.19.0
-Release  : 75
+Release  : 76
 URL      : https://files.pythonhosted.org/packages/cf/65/1224bc51f155ebf098eaeef02bb7fdeb380b2e03986b626d1811921db16f/ipython-7.19.0.tar.gz
 Source0  : https://files.pythonhosted.org/packages/cf/65/1224bc51f155ebf098eaeef02bb7fdeb380b2e03986b626d1811921db16f/ipython-7.19.0.tar.gz
 Summary  : IPython: Productive Interactive Computing
