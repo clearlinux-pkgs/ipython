@@ -8,5 +8,6 @@ ipykernel
 ipython
 ipython-sql
 jupyter-notebook-gist
+jupyter_console
 python-dotenv
 spyder-ide

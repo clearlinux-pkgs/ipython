@@ -1,1 +1,1 @@
-#ipython kernel install --prefix %{buildroot}/usr
+ipython kernel install --prefix %{buildroot}/usr
