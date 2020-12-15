@@ -2,11 +2,11 @@
 Cython
 bash_kernel
 django-nose
-fontforge
 ipdb
 ipdbplugin
 ipykernel
 ipython
 ipython-sql
 jupyter-notebook-gist
+python-dotenv
 spyder-ide

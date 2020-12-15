@@ -4,14 +4,13 @@
 #
 Name     : ipython
 Version  : 7.19.0
-Release  : 76
+Release  : 77
 URL      : https://files.pythonhosted.org/packages/cf/65/1224bc51f155ebf098eaeef02bb7fdeb380b2e03986b626d1811921db16f/ipython-7.19.0.tar.gz
 Source0  : https://files.pythonhosted.org/packages/cf/65/1224bc51f155ebf098eaeef02bb7fdeb380b2e03986b626d1811921db16f/ipython-7.19.0.tar.gz
 Summary  : IPython: Productive Interactive Computing
 Group    : Development/Tools
 License  : BSD-3-Clause BSD-3-Clause-Clear
 Requires: ipython-bin = %{version}-%{release}
-Requires: ipython-data = %{version}-%{release}
 Requires: ipython-license = %{version}-%{release}
 Requires: ipython-man = %{version}-%{release}
 Requires: ipython-python = %{version}-%{release}
@@ -55,19 +54,10 @@ IPython provides a rich toolkit to help you make the most out of using Python
 %package bin
 Summary: bin components for the ipython package.
 Group: Binaries
-Requires: ipython-data = %{version}-%{release}
 Requires: ipython-license = %{version}-%{release}
 
 %description bin
 bin components for the ipython package.
-
-
-%package data
-Summary: data components for the ipython package.
-Group: Data
-
-%description data
-data components for the ipython package.
 
 
 %package license
@@ -123,7 +113,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1604335293
+export SOURCE_DATE_EPOCH=1608010317
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -152,7 +142,7 @@ echo ----[ mark ]----
 cat %{buildroot}/usr/lib/python3*/site-packages/*/requires.txt || :
 echo ----[ mark ]----
 ## install_append content
-ipython kernel install --prefix %{buildroot}/usr
+#ipython kernel install --prefix %{buildroot}/usr
 ## install_append end
 
 %files
@@ -164,12 +154,6 @@ ipython kernel install --prefix %{buildroot}/usr
 /usr/bin/iptest3
 /usr/bin/ipython
 /usr/bin/ipython3
-
-%files data
-%defattr(-,root,root,-)
-/usr/share/jupyter/kernels/python3/kernel.json
-/usr/share/jupyter/kernels/python3/logo-32x32.png
-/usr/share/jupyter/kernels/python3/logo-64x64.png
 
 %files license
 %defattr(0644,root,root,0755)
