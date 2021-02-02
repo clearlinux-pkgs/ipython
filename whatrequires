@@ -9,5 +9,7 @@ ipython
 ipython-sql
 jupyter-notebook-gist
 jupyter_console
+jupyterlab
 python-dotenv
 spyder-ide
+spyder-kernels
