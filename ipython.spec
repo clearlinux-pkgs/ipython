@@ -4,7 +4,7 @@
 #
 Name     : ipython
 Version  : 7.22.0
-Release  : 82
+Release  : 83
 URL      : https://files.pythonhosted.org/packages/bd/59/5e4caa1b226d79508c8601888bd94af1f12ff464613daad90193c0e5fc88/ipython-7.22.0.tar.gz
 Source0  : https://files.pythonhosted.org/packages/bd/59/5e4caa1b226d79508c8601888bd94af1f12ff464613daad90193c0e5fc88/ipython-7.22.0.tar.gz
 Summary  : IPython: Productive Interactive Computing
