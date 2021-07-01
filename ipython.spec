@@ -4,7 +4,7 @@
 #
 Name     : ipython
 Version  : 7.25.0
-Release  : 89
+Release  : 90
 URL      : https://files.pythonhosted.org/packages/73/fe/0250e9e85629f7eba7182490364174e50c48d1eac98bc5e81f993cf1a11e/ipython-7.25.0.tar.gz
 Source0  : https://files.pythonhosted.org/packages/73/fe/0250e9e85629f7eba7182490364174e50c48d1eac98bc5e81f993cf1a11e/ipython-7.25.0.tar.gz
 Summary  : IPython: Productive Interactive Computing
