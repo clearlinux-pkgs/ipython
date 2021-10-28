@@ -4,7 +4,7 @@
 #
 Name     : ipython
 Version  : 7.28.0
-Release  : 95
+Release  : 96
 URL      : https://files.pythonhosted.org/packages/e2/c8/7046d0409a90e31263d5bbaa708347d522ac584a1140c01a951d9deb1792/ipython-7.28.0.tar.gz
 Source0  : https://files.pythonhosted.org/packages/e2/c8/7046d0409a90e31263d5bbaa708347d522ac584a1140c01a951d9deb1792/ipython-7.28.0.tar.gz
 Summary  : IPython: Productive Interactive Computing
