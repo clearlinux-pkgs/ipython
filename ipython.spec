@@ -4,14 +4,13 @@
 #
 Name     : ipython
 Version  : 7.28.0
-Release  : 97
+Release  : 98
 URL      : https://files.pythonhosted.org/packages/e2/c8/7046d0409a90e31263d5bbaa708347d522ac584a1140c01a951d9deb1792/ipython-7.28.0.tar.gz
 Source0  : https://files.pythonhosted.org/packages/e2/c8/7046d0409a90e31263d5bbaa708347d522ac584a1140c01a951d9deb1792/ipython-7.28.0.tar.gz
 Summary  : IPython: Productive Interactive Computing
 Group    : Development/Tools
 License  : BSD-3-Clause BSD-3-Clause-Clear
 Requires: ipython-bin = %{version}-%{release}
-Requires: ipython-data = %{version}-%{release}
 Requires: ipython-license = %{version}-%{release}
 Requires: ipython-man = %{version}-%{release}
 Requires: ipython-python = %{version}-%{release}
@@ -57,19 +56,10 @@ IPython provides a rich toolkit to help you make the most out of using Python
 %package bin
 Summary: bin components for the ipython package.
 Group: Binaries
-Requires: ipython-data = %{version}-%{release}
 Requires: ipython-license = %{version}-%{release}
 
 %description bin
 bin components for the ipython package.
-
-
-%package data
-Summary: data components for the ipython package.
-Group: Data
-
-%description data
-data components for the ipython package.
 
 
 %package license
@@ -126,7 +116,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1632753438
+export SOURCE_DATE_EPOCH=1635524666
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -138,11 +128,6 @@ export CXXFLAGS="$CXXFLAGS -O3 -ffat-lto-objects -flto=auto "
 export MAKEFLAGS=%{?_smp_mflags}
 python3 setup.py build
 
-%check
-export http_proxy=http://127.0.0.1:9/
-export https_proxy=http://127.0.0.1:9/
-export no_proxy=localhost,127.0.0.1,0.0.0.0
-pytest || :
 %install
 export MAKEFLAGS=%{?_smp_mflags}
 rm -rf %{buildroot}
@@ -155,7 +140,7 @@ echo ----[ mark ]----
 cat %{buildroot}/usr/lib/python3*/site-packages/*/requires.txt || :
 echo ----[ mark ]----
 ## install_append content
-ipython kernel install --prefix %{buildroot}/usr
+#ipython kernel install --prefix %{buildroot}/usr
 ## install_append end
 
 %files
@@ -167,12 +152,6 @@ ipython kernel install --prefix %{buildroot}/usr
 /usr/bin/iptest3
 /usr/bin/ipython
 /usr/bin/ipython3
-
-%files data
-%defattr(-,root,root,-)
-/usr/share/jupyter/kernels/python3/kernel.json
-/usr/share/jupyter/kernels/python3/logo-32x32.png
-/usr/share/jupyter/kernels/python3/logo-64x64.png
 
 %files license
 %defattr(0644,root,root,0755)
