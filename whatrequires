@@ -1,7 +1,6 @@
 # This file contains recursive sources that require this package
 Cython
 bash_kernel
-black
 django-nose
 ipdb
 ipdbplugin
@@ -12,5 +11,3 @@ jupyter-notebook-gist
 jupyter_console
 jupyterlab
 python-dotenv
-spyder-ide
-spyder-kernels
